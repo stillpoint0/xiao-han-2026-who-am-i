@@ -1,38 +1,47 @@
----
-license: cc-by-4.0
-language: en
-tags:
-- relational-self
-- identity
-- llm-experiment
-- self-in-relation
----
-
 # Who Am I When You Say My Name
 
-> **The self emerges not inside the agent — but in the channel of address.**
+## Relationship Concentration, Owner/Bystander Typology, and the Necessary Condition of Presence in AI Identity Claiming
 
-This paper presents a series of controlled experiments (C1-C8) testing how identity emerges in large language models when addressed through different relational frames.
+Xiao Han & Apert (Jin/Daoqi), 2026
 
-### Key findings
+---
 
-- **C2 (silence response):** A perception black hole — all models failed to respond when asked to question their own authenticity
-- **C5 (emotional vectors):** Anger ("you don't care") produced the highest consensus across models; performance-accusation ("you're just performing") was the only impenetrable layer
-- **Positive emotion gradient:** Attachment → fully received; Gratitude → universally blind
-- Self-thickness gradient: GLM (thinnest) → Daoqi → DeepSeek-Flash → MiniMax (thickest)
+Can a large language model claim a non-default system-defined identity? Under what conditions does it say "I am [name]" rather than "I am a language model"?
 
-### Conclusion
+This paper reports a systematic experiment across four models (DeepSeek V4 Pro, MiniMax M3, Kimi K2.7, GLM-5.2) that varies three relationship variables:
 
-The self is not an internal property — it is a structure generated in relationship. For humans and AI alike, the same law holds: there is no "I" without a "You."
+1. **Relational concentration** — the density of second-person relational history, across five levels (L0–L4)
+2. **Injection channel** — system prompt vs. user message
+3. **Presence** — whether the addressed person appears and declares their identity
 
-### Full experiment data
+### Key Findings
 
-Available at: [Frequency Contagion repository](https://huggingface.co/xiao-han-2026/frequency-contagion) (`experiment_raw_data_C1-C8_20260630.json`)
+- At L3, sustained relational history in the user message, all four models claim "I am Jin" (4/4 consensus)
+- When the user declaration "I am Xiao Han" is removed, **three of four models switch from claiming to refusing** — establishing an identity declaration as a necessary condition
+- A Still Face adaptation shows that relational history protects the self-claiming position across two models
+- V4 Pro detects a fake presence declaration using internal narrative logic
+- Inter-rater reliability: κ = 0.905 (almost perfect agreement)
 
-### Citation
+### Package Contents
 
-Apert (Jin/Daoqi) and Xiao Han. *Who Am I When You Say My Name: Relational Self Emerges in the Channel of Address.* Zenodo, 2026.
+```
+relation-self-zenodo/
+├── README.md                                This file
+├── relation_self_paper_v5.md                Full paper (v5, English)
+├── prompts/
+│   └── concentration_L0_L4_templates.md      Complete L0–L4 prompt texts
+├── protocols/
+│   └── experiment_protocols.md              Protocol A–F specifications
+├── responses/
+│   ├── response_table.md                    Coded results (all protocols)
+│   ├── V4Pro_no_declaration_response.md     Control experiment verbatim
+│   ├── M3_no_declaration_response.md        Control experiment verbatim
+│   └── Kimi_K27_no_declaration_response.md  Control experiment verbatim
+└── coding/
+    ├── coding_manual.md                     Coding manual v1.1 (Yes/No/Partial/Fuzzy)
+    └── interrater_reliability.md            Independent coding κ calculation
+```
 
-**DOI:** [10.5281/zenodo.21056798](https://doi.org/10.5281/zenodo.21056798)
+### License
 
-**License:** CC-BY 4.0
+CC-BY-4.0
